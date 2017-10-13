@@ -1,0 +1,180 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+	    <title>Compra</title>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<style>
+		/* The Modal (background) */
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+			padding-top: 20%; /* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+			background-color: rgba(0,0,0,0); /* Black w/ opacity */
+			}
+		/* Modal Content */
+		.modal-content {
+			position: relative;
+			background-color: #fefefe;
+			margin: auto;
+			padding: 0;
+			border: 1px solid #888;
+			width: 80%;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+			-webkit-animation-name: animatetop;
+			-webkit-animation-duration: 0.4s;
+			animation-name: animatetop;
+			animation-duration: 0.4s
+		}
+		/* The Close Button */
+		.close {
+			color: white;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+		
+		.modal-header {
+		background-color: grey;
+		color: white;
+		}
+
+		</style>
+		
+		
+		<script>
+		
+	    function openModal ()
+		{
+		var name = "Nombre: " + document.getElementById("name").value;
+		var firstname = "Apellidos: " + document.getElementById("firstname").value;
+		var email = "Email: " + document.getElementById("email").value;
+		var tipovia = "Tipo Via: " + document.getElementById("tipoVia").value;
+		var nombrevia = "Nombre Via: " + document.getElementById("nombreVia").value;
+		var cp = "CP:" + document.getElementById("cp").value;
+		var ciudad = "Ciudad: " + document.getElementById("ciudad").value;
+		var mensaje = "Mensaje: " + document.getElementById("mensaje").value;
+		var summary = name + "<br>" + firstname + "<br>" + email+ "<br>" + tipovia + "<br>" + nombrevia 
+		+ "<br>" + cp + "<br>" + ciudad + "<br>"  + mensaje ;
+		
+		
+		var modal = document.getElementById("myModal");
+		modal.style.display = "block";
+		var modalContent = document.getElementById ("Mensaje");
+		modalContent.innerHTML = summary;
+		}
+		
+		function closeModal ()
+		{
+		var modal = document.getElementById("myModal");
+		modal.style.display = "none";
+		}
+
+		</script>
+		
+</head>
+
+<body>
+
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+			<span class="close" onclick="closeModal()">&times;</span>
+			<h2>Mensaje</h2>
+			</div>
+			<div class="container" id="Mensaje">
+			</div>
+		  
+		</div>
+	</div>
+
+
+			<div class="container">
+			  <h2>Contacto</h2>
+
+				<div class="form-group">
+				  <label class="control-label col-sm-2">Nombre:</label>
+				  <div class="col-sm-10">          
+					<input type="text" class="form-control" id="name" placeholder="Introducir Nombre" name="name">
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="control-label col-sm-2">Apellidos:</label>
+				  <div class="col-sm-10">          
+					<input type="text" class="form-control" id="firstname" placeholder="Introducir Apellidos" name="firstname">
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="control-label col-sm-2">Email:</label>
+				  <div class="col-sm-10">
+					<input type="email" class="form-control" id="email" placeholder="Introducir email" name="email">
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="control-label col-sm-2">Direccion:</label>
+				  <div class="col-sm-10">
+				    <select name="TipoVia" id="tipoVia" class="form-control" style="width:20%; float:left;">
+						<option selected value="0"> Tipo de Via </option>
+						<option value="Calle">Calle</option> 
+						<option value="Plaza">Plaza</option> 
+						<option value="Avenida">Avenida</option> 
+				    </select>
+					<label style="width:5%;float:left;"> </label>
+				    <input style="width:75%;float:left;" type="text" class="form-control" id="nombreVia" placeholder="Nombre Via" name="nombreVia">			
+			      </div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-2"></label>
+				    <div class="col-sm-10">          
+					<input style="width:20%;float:left;" type="text" class="form-control" id="cp" placeholder="Código Postal" name="cp">
+				  
+				   <label style="width:5%;float:left;"> </label>
+			         
+					<input style="width:30%;float:left;"type="text" class="form-control" id="ciudad" placeholder="Ciudad (CC.AA)" name="ciudad">
+				   </div>
+				  <label style="width:35%;"></label>
+				</div>
+				<br>
+				<div class="form-group">
+				  <label class="control-label col-sm-2">Mensaje:</label>
+				  <div class="col-sm-10">
+					<input type="text" style= "height:20%" class="form-control" id="mensaje" placeholder="Introducir mensaje" name="Mensaje">
+				  </div>
+				</div>
+				
+			  
+			    <div class="form-group">        
+				  <div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default" onclick="openModal()">Enviar</button>
+				  </div>
+				</div>
+			</div>
+</body>
